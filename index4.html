@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+       img{
+         width: 150px;
+         height: 150px;
+         margin: 10px; 
+         box-sizing: border-box;
+      }
+      a{
+         
+         display: block;
+      }
+   </style>
+</head>
+<body>
+   <a href=""></a>
+   <div class="wrapper">
+      <img src="https://bipbap.ru/wp-content/uploads/2017/04/priroda_kartinki_foto_03.jpg" alt="">
+      <img src="https://bipbap.ru/wp-content/uploads/2017/04/4-2.jpg" alt="">
+      <img src="https://bipbap.ru/wp-content/uploads/2017/04/81074043_lovelylandscapes101.jpg" alt="">
+      <img src="https://bipbap.ru/wp-content/uploads/2017/04/132638948_beautiful_nature_9_5.jpg" alt="">
+      <img src="https://bipbap.ru/wp-content/uploads/2017/04/1334248724_1.jpg" alt="">
+      <img src="https://bipbap.ru/wp-content/uploads/2017/04/1364841736_53-19.jpg" alt="">
+      <img src="https://bipbap.ru/wp-content/uploads/2017/04/ce4bee77ece42e391a81ede2841a865d.jpg" alt="">
+      <img src="https://bipbap.ru/wp-content/uploads/2017/04/elitefon.ru_17023.jpg" alt="">
+   </div>
+   <input type="button" value="Показать ссылки" id="btn">
+   
+
+   <script>
+     let btn=document.getElementById("btn")
+     let imgs= document.images;
+     btn.addEventListener("click",getLink)
+         function getLink(){
+         for(let i=0; i<imgs.length; i++){
+         let link= document.createElement("a");
+         link.href=imgs[i].src;
+         link.innerHTML=imgs[i].src;
+         link.target="_blanck"
+         document.body.appendChild(link);
+         }
+         btn.removeEventListener("click",getLink)
+         let start = Date.now();
+         let timer = setInterval(function() {
+         let timePassed = Date.now() - start;
+               if (z == 8) {
+                  clearInterval(timer);
+                  return;
+               }
+               draw(timePassed);
+         }, 1000);
+         let z=0
+         function draw(timePassed) {
+         imgs[z].style.border = "4px solid red";
+         z++
+         }
+     }
+   </script>
+</body>  
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Cookies</title>
+</head>
+<body>
+   <input type="button" value="Кнопка1" id="btn1">
+   <input type="button" value="Кнопка2" id="btn2">
+   <input type="button" value="Кнопка3" id="btn3">
+   <input type="button" value="Удалить" id="btn4">
+   <img src="" alt="" style="display: block;">
+   <script> 
+      function $(id){
+         return document.getElementById(id);
+      }
+     $("btn1").onclick=function(){
+      let img = document.querySelector("img")
+      img.src="img/ocean-sunset-swim.jpg"
+     }
+     $("btn2").onclick=function(){
+      let img = document.querySelector("img")
+      img.src="img/ocean-water-with-swimmers.jpg"
+     }
+     $("btn3").onclick=function(){
+      let img = document.querySelector("img")
+      img.src="img/seaside-ocean-pools.jpg"
+     }
+     $("btn4").onclick=function(){
+      let img = document.querySelector("img")
+      img.src=""
+     }
+   </script>
+</body>
+</html>

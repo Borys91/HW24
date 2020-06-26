@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+      input{
+         display:inline-block;
+         margin-bottom: 30px;
+      }
+      canvas{
+         display:block;
+         
+      }
+   </style>
+</head>
+<body>
+   <input type="text" name="" id="data" placeholder="Введите данные" autofocus>
+   <input type="button" value="Передать значение" id="btn1">
+   <input type="button" value="Построить диаграмму" id="btn2" >
+   <input type="button" value="Сбросить значение" id="btn3">
+   <canvas id="canvas"></canvas>
+
+
+   <script>
+      function $(id){
+         return document.getElementById(id)
+      }
+      let arr=[]
+      let patten=/\d/
+       $("btn1").onclick=function(){
+            if(patten.test($("data").value)){
+               arr.push(parseInt($("data").value))
+               $("data").value=""
+         }
+      }
+      $("btn1").onmousedown=function() {
+            return false;
+      };
+      $("btn2").onclick=function(){
+         $("canvas").style.display="block"
+            function drawBarChart(canvas,data,height,width,color){
+               let cnvs=document.querySelector(canvas);
+               cnvs.width=width;
+               cnvs.height=height;
+               cnvs.style.border=" 1px solid black"
+               let ctx=cnvs.getContext("2d");
+               let max=Number.NEGATIVE_INFINITY;
+               for(let i=0; i<data.length; i++){
+                  if(data[i]>max) max=data[i];
+               }
+               let scale=height/max;
+               let barWidth=Math.floor(width/data.length);
+               for(let i=0 ; i<data.length; i++){
+                  let barHeight=scale*data[i];
+                  let x=barWidth*i;
+                  let y=height-barHeight;
+                  ctx.fillStyle=color;
+                  ctx.fillRect(x,y,barWidth-2,barHeight);
+               }
+             }
+      drawBarChart("canvas",arr,400,600,"rgb(36, 14, 116)");
+      }
+      $("btn3").onclick=function(){
+        $("canvas").style.display="none"
+        arr=[]
+      }
+      
+   </script>
+</body>
+</html>

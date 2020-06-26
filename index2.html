@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+      .wrapper{
+         width: 700px;
+         align-items: center;
+         margin: 0 auto;
+      }
+      img{
+         width: 100px;
+         height: 100px;
+         margin: 10px;
+         
+      }
+   </style>
+</head>
+<body>
+   <div class="wrapper">
+      <img src="https://bipbap.ru/wp-content/uploads/2017/04/priroda_kartinki_foto_03.jpg" alt="">
+      <img src="https://bipbap.ru/wp-content/uploads/2017/04/4-2.jpg" alt="">
+      <img src="https://bipbap.ru/wp-content/uploads/2017/04/81074043_lovelylandscapes101.jpg" alt="">
+      <img src="https://bipbap.ru/wp-content/uploads/2017/04/132638948_beautiful_nature_9_5.jpg" alt="">
+      <img src="https://bipbap.ru/wp-content/uploads/2017/04/1334248724_1.jpg" alt="">
+      <img src="https://bipbap.ru/wp-content/uploads/2017/04/1364841736_53-19.jpg" alt="">
+      <img src="https://bipbap.ru/wp-content/uploads/2017/04/ce4bee77ece42e391a81ede2841a865d.jpg" alt="">
+      <img src="https://bipbap.ru/wp-content/uploads/2017/04/elitefon.ru_17023.jpg" alt="">
+      <img src="https://bipbap.ru/wp-content/uploads/2017/04/maxresdefault-11.jpg" alt="">
+      <img src="https://bipbap.ru/wp-content/uploads/2017/04/vodopad_krasivye_prirody_na_rabochiy_stol_1600x1200.jpg" alt="">
+   </div>
+   <script>
+     let img= document.images;
+     let bigImg=document.createElement("img")
+   for(let i= 0 ; i<img.length ; i++){
+      img[i].onclick =function(){
+      bigImg.src=img[i].src
+      document.body.appendChild(bigImg)
+      bigImg.style.width="400px"
+      bigImg.style.height="400px"
+      bigImg.style.position="absolute"
+      bigImg.style.top=0;
+      bigImg.style.left=0;
+      bigImg.style.display="block"
+
+   }
+      img[i].onmouseout  =function(){
+         bigImg.style.display="none"
+     
+   }
+   }
+   </script>
+</body>
+</html>
